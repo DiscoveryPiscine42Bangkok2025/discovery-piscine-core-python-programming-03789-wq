@@ -1,5 +1,5 @@
 def checkmate(board_str):
-    # 1. จัดการสตริงให้สะอาด: ตัดช่องว่างหัวท้าย และกรองบรรทัดว่างออก
+    # 1.ตัดช่องว่างหัวท้าย และกรองบรรทัดว่างออก
     rows = [line.strip() for line in board_str.strip().split('\n') if line.strip()]
     
     if not rows:
@@ -24,7 +24,6 @@ def checkmate(board_str):
     kr, kc = king_pos
 
     # 3. เช็ค Pawn (P) - กรณีบุกจากล่างขึ้นบน
-    # Pawn ต้องอยู่ที่ (r+1, c-1) หรือ (r+1, c+1) เพื่อรุก King
     pawn_checks = [(1, -1), (1, 1)]
     for dr, dc in pawn_checks:
         nr, nc = kr + dr, kc + dc
