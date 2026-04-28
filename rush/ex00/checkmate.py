@@ -19,7 +19,7 @@ def checkmate(board_str):
         if king_pos: break
 
     if not king_pos:
-        return # ถ้าหา King ไม่เจอไม่ต้องทำต่อ [cite: 58]
+        return # ถ้าหา King ไม่เจอไม่ต้องทำต่อ
 
     kr, kc = king_pos
 
@@ -32,7 +32,7 @@ def checkmate(board_str):
                 print("Success")
                 return
 
-    # 4. เช็คหมากทางไกล (B, R, Q) [cite: 80, 83, 96, 104]
+    # 4. เช็คหมากทางไกล (B, R, Q)
     directions = {
         'B': [(-1, -1), (-1, 1), (1, -1), (1, 1)],
         'R': [(-1, 0), (1, 0), (0, -1), (0, 1)],
@@ -45,15 +45,14 @@ def checkmate(board_str):
             while 0 <= nr < size and 0 <= nc < size:
                 target = board[nr][nc]
                 if target != '.':
-                    # ถ้าเจอหมากที่รุกได้ในทิศทางนั้น [cite: 51, 55]
+                    # ถ้าเจอหมากที่รุกได้ในทิศทางนั้น
                     if target == piece_type or target == 'Q':
                         print("Success")
                         return
                     else:
-                        # เจอหมากตัวอื่นขวางทาง [cite: 51]
+                        # เจอหมากตัวอื่นขวางทาง
                         break
                 nr += dr
                 nc += dc
 
-    # 5. ถ้าไม่โดนรุกเลย
     print("Fail")
