@@ -13,7 +13,6 @@ def checkmate(board_str):
            return
 
 
-   # ถ้าผ่านการตรวจสอบ ให้สร้างบอร์ดและเริ่มหา King ต่อไป
    board = [list(row) for row in rows]
    size = size_r
   
